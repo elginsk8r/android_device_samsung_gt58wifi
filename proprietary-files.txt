@@ -1,43 +1,43 @@
 # Samsung Package Version T350XXU1CQJ5_T350XAC1CQJ5_XAC (unless otherwise specified and/or tagged)
 
 # ACDBs
-etc/Bluetooth_cal.acdb
-etc/General_cal.acdb
-etc/Global_cal.acdb
-etc/Handset_cal.acdb
-etc/Hdmi_cal.acdb
-etc/Headset_cal.acdb
-etc/Speaker_cal.acdb
+etc/Bluetooth_cal.acdb:vendor/etc/Bluetooth_cal.acdb
+etc/General_cal.acdb:vendor/etc/General_cal.acdb
+etc/Global_cal.acdb:vendor/etc/Global_cal.acdb
+etc/Handset_cal.acdb:vendor/etc/Handset_cal.acdb
+etc/Hdmi_cal.acdb:vendor/etc/Hdmi_cal.acdb
+etc/Headset_cal.acdb:vendor/etc/Headset_cal.acdb
+etc/Speaker_cal.acdb:vendor/etc/Speaker_cal.acdb
 
 # Audio
-etc/Tfa9895.cnt
+etc/Tfa9895.cnt:vendor/etc/Tfa9895.cnt
 lib/hw/audio.primary.msm8916.so:vendor/lib/hw/audio.primary.msm8916.so
-lib/libaudio_soundtrigger.so
-lib/libSamsungPreProcess.so
-lib/libSamsungPostProcess.so
-lib/libsamsungVoipResampler.so
-lib/libsamsungRecord.so
-lib/libsamsungSoundbooster_ext.so
-lib/lib_soundaliveresampler.so
-lib/lib_SamsungRec_V04013.so
-lib/libsecaudioinfo.so
-lib/lib_SoundBooster_ver610.so
-lib/lib_SoundAlive_SRC384_ver300.so
-lib/libfloatingfeature.so
-lib/libtfa9895.so
+lib/libaudio_soundtrigger.so:vendor/lib/libaudio_soundtrigger.so
+lib/libSamsungPreProcess.so:vendor/lib/libSamsungPreProcess.so
+lib/libSamsungPostProcess.so:vendor/lib/libSamsungPostProcess.so
+lib/libsamsungVoipResampler.so:vendor/lib/libsamsungVoipResampler.so
+lib/libsamsungRecord.so:vendor/lib/libsamsungRecord.so
+lib/libsamsungSoundbooster_ext.so:vendor/lib/libsamsungSoundbooster_ext.so
+lib/lib_soundaliveresampler.so:vendor/lib/lib_soundaliveresampler.so
+lib/lib_SamsungRec_V04013.so:vendor/lib/lib_SamsungRec_V04013.so
+lib/libsecaudioinfo.so:vendor/lib/libsecaudioinfo.so
+lib/lib_SoundBooster_ver610.so:vendor/lib/lib_SoundBooster_ver610.so
+lib/lib_SoundAlive_SRC384_ver300.so:vendor/lib/lib_SoundAlive_SRC384_ver300.so
+lib/libfloatingfeature.so:vendor/lib/libfloatingfeature.so
+lib/libtfa9895.so:vendor/lib/libtfa9895.so|b217980c2206ff4053b2332a9bffd21f0df7efd9
 
 # Camera
 lib/hw/camera.msm8916.so:vendor/lib/hw/camera.vendor.msm8916.so
-lib/libaec_algo_front.so
-lib/libaec_algo_rear.so
-lib/libaf_algo_rear.so
-lib/libAl_Awb.so
-lib/libAl_Awb_Sp.so
-lib/libawb_algo_front.so
-lib/libawb_algo_rear_al.so
-lib/libmmcamera2_stats_algorithm.so
-lib/libmmcamera_cac2_lib_13M.so
-lib/libmmcamera_wavelet_lib.so
+lib/libaec_algo_front.so:vendor/lib/libaec_algo_front.so
+lib/libaec_algo_rear.so:vendor/lib/libaec_algo_front.so
+lib/libaf_algo_rear.so:vendor/lib/libaec_algo_front.so
+lib/libAl_Awb.so:vendor/lib/libAl_Awb.so
+lib/libAl_Awb_Sp.so:vendor/lib/libAl_Awb_Sp.so
+lib/libawb_algo_front.so:vendor/lib/libawb_algo_front.so
+lib/libawb_algo_rear_al.so:vendor/lib/libawb_algo_rear_al.so
+lib/libmmcamera2_stats_algorithm.so:vendor/lib/libmmcamera2_stats_algorithm.so
+lib/libmmcamera_cac2_lib_13M.so:vendor/lib/libmmcamera_cac2_lib_13M.so
+lib/libmmcamera_wavelet_lib.so:vendor/lib/libmmcamera_wavelet_lib.so
 vendor/lib/libactuator_dw9804_rossa_camcorder.so
 vendor/lib/libactuator_dw9804_rossa_camera.so
 vendor/lib/libchromatix_sr544_common.so
