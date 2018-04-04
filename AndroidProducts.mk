@@ -16,5 +16,8 @@
 
 PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/aosp_gt58wifi.mk \
-	$(LOCAL_DIR)/ev_gt58wifi.mk \
-	$(LOCAL_DIR)/lineage_gt58wifi.mk
+	$(LOCAL_DIR)/ev_gt58wifi.mk
+
+COMMON_LUNCH_CHOICES := \
+	aosp_gt58wifi-userdebug \
+	ev_gt58wifi-userdebug 
