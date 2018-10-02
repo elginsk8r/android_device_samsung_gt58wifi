@@ -24,6 +24,9 @@
 # Inherit from common
 $(call inherit-product, device/samsung/gte-common/device-common.mk)
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+
 # Audio
 AUDIO_CONFIG_PATH := hardware/qcom-caf/msm8916/audio/configs
 PRODUCT_COPY_FILES += \
