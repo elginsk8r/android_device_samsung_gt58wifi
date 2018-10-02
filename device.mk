@@ -24,6 +24,9 @@
 # Inherit from common
 $(call inherit-product, device/samsung/gte-common/device-common.mk)
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/mixer_paths.xml \
