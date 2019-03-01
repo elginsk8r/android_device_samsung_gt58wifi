@@ -29,6 +29,11 @@ PLATFORM_PATH := device/samsung/gt58wifi
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := gt58wifi,gt58wifixx,SM-T350
 
+TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+    /vendor/lib/hw/audio.primary.msm8916.so=25 \
+    /vendor/lib/hw/camera.vendor.msm8916.so=25 \
+    /vendor/lib/hw/sensors.vendor.msm8916.so=25
+
 # Kernel
 TARGET_KERNEL_VARIANT_CONFIG := msm8916_sec_gt58wifi_eur_defconfig
 
