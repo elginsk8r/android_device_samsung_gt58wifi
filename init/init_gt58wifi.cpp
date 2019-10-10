@@ -52,21 +52,26 @@ using android::base::Trim;
 
 #define SERIAL_NUMBER_FILE "/efs/FactoryApp/serial_no"
 
-void property_override(char const prop[], char const value[])
-{
-    prop_info *pi;
+// copied from build/tools/releasetools/ota_from_target_files.py
+// but with "." at the end and empty entry
+std::vector<std::string> ro_product_props_default_source_order = {
+    ".",
+    "product.",
+    "product_services.",
+    "odm.",
+    "vendor.",
+    "system.",
+};
 
-    pi = (prop_info*) __system_property_find(prop);
-    if (pi)
+void property_override(char const prop[], char const value[], bool add = true)
+{
+    auto pi = (prop_info *) __system_property_find(prop);
+
+    if (pi != nullptr) {
         __system_property_update(pi, value, strlen(value));
-    else
+    } else if (add) {
         __system_property_add(prop, strlen(prop), value, strlen(value));
-}
-
-void property_override_dual(char const system_prop[], char const vendor_prop[], char const value[])
-{
-    property_override(system_prop, value);
-    property_override(vendor_prop, value);
+    }
 }
 
 /* Read the file at filename and returns the integer
@@ -114,8 +119,16 @@ void set_wifi_properties()
 
 void set_target_properties(const char *device, const char *model)
 {
-    property_override_dual("ro.product.device", "ro.product.vendor.model", device);
-    property_override_dual("ro.product.model", "ro.product.vendor.device", model);
+    const auto set_ro_product_prop = [](const std::string &source,
+            const std::string &prop, const std::string &value) {
+        auto prop_name = "ro.product." + source + prop;
+        property_override(prop_name.c_str(), value.c_str(), false);
+    };
+
+    for (const auto &source : ro_product_props_default_source_order) {
+        set_ro_product_prop(source, "device", device);
+        set_ro_product_prop(source, "model", model);
+    }
 
     android::init::property_set("ro.ril.telephony.mqanelements", "6");
 
