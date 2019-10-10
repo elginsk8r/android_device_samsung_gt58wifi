@@ -25,7 +25,7 @@
 $(call inherit-product, device/samsung/gte-common/device-common.mk)
 
 # Audio
-AUDIO_CONFIG_PATH := hardware/qcom/audio-caf/msm8916/configs
+AUDIO_CONFIG_PATH := hardware/qcom-caf/msm8916/audio/configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
     $(AUDIO_CONFIG_PATH)/msm8916_32/audio_output_policy.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_output_policy.conf \
