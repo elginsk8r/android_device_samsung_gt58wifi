@@ -34,6 +34,9 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /vendor/lib/hw/camera.vendor.msm8916.so=25 \
     /vendor/lib/hw/sensors.vendor.msm8916.so=25
 
+# Audio
+USE_CUSTOM_MIXER_PATHS := true
+
 # Kernel
 TARGET_KERNEL_VARIANT_CONFIG := msm8916_sec_gt58wifi_eur_defconfig
 
