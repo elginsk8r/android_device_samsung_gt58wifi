@@ -28,3 +28,10 @@ export SETUP_DEVICE_COMMON_DIR=0
 export SETUP_BOARD_COMMON_DIR=0
 
 ./../../$VENDOR/$DEVICE_COMMON/extract-files.sh $@
+
+MY_DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
+
+DEVICE_BLOB_ROOT="$MY_DIR"/../../../vendor/"$VENDOR"/"$DEVICE"/proprietary
+
+patchelf --add-needed "libprocessgroup.so" "$DEVICE_BLOB_ROOT"/vendor/lib/hw/audio.primary.msm8916.so

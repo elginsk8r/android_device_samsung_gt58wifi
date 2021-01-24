@@ -44,3 +44,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.zram=false \
     ro.sf.lcd_density=160 \
     telephony.lteOnCdmaDevice=0
+
+# Shims
+PRODUCT_PACKAGES += \
+    libprocessgroup
